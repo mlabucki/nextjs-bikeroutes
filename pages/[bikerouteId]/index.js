@@ -37,7 +37,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: 'blocking',
     paths: bikeroutes.map((bikeroute) => ({
       params: { bikerouteId: bikeroute._id.toString() },
     })),
